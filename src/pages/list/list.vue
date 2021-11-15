@@ -1,15 +1,12 @@
 <template>
   <div class="hello">
-    <h1>List component {{ msg }}</h1>
+    <h1>List component</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'List',
-  props: {
-    msg: String
-  }
+  name: 'List'
 }
 </script>
 

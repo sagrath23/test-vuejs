@@ -1,5 +1,7 @@
 # test-vuejs
 
+A small experiment to test Vue.js new features & approaches to create UIs.
+
 ## Project setup
 ```
 yarn install
