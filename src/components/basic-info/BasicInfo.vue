@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// TODO: display more Pokemon's info
 export default {
   name: 'BasicInfo',
   props: {
