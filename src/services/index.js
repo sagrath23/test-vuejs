@@ -5,3 +5,9 @@ export const fetchPokemonDetail = async (pokemonName) => {
 
   return result.json()
 }
+
+export const fetchPokemonList = async(limit, offset) => {
+  const result = await fetch(`${basePath}/pokemon?limit=${limit}&offset=${offset}`)
+
+  return result.json()
+}

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router' // TODO: import VueRouter from 'vue-router'
 
-import List from '../pages/list/list.vue'
-import Detail from '../pages/detail/detail.vue'
+import List from '../pages/list/List.vue'
+import Detail from '../pages/detail/Detail.vue'
 import NotFound from '../pages/not-found/NotFound.vue'
 
 const routes = [

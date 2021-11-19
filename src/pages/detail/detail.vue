@@ -1,32 +1,39 @@
 <template>
   <div class="hello">
     <h1>{{$route.params.pokemonName}}'s Details</h1>
+    <Avatar :src="pokemonData.sprites.front_default"></Avatar>
+    <BasicInfo :pokemonData="pokemonData"></BasicInfo>
   </div>
 </template>
 
 <script>
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import BasicInfo from '../../components/basic-info/BasicInfo.vue'
+import Avatar from '../../components/avatar/Avatar.vue'
 import { fetchPokemonDetail } from '../../services'
 
 export default {
+  components: { // TODO: remove this to avoid basic info render
+    Avatar,
+    BasicInfo
+  },
   name: 'Detail',
   setup() {
     const route = useRoute()
     const pokemonData = ref()
 
-    console.log('running setup')
-
     watch(
       () => route.params.pokemonName,
       async (newPokemonName) => {
-        console.log(newPokemonName, 'getting name')
         pokemonData.value = await fetchPokemonDetail(newPokemonName)
-
-        console.log(pokemonData.value, 'vue ref')
       },
       { immediate: true } // TODO: remove config's object
     )
+
+    return {
+      pokemonData// TODO: remove return object to avoid pokemonData exposure to render context 
+    }
   }
 }
 </script>
